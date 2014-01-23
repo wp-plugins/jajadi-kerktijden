@@ -3,7 +3,7 @@
 	Plugin Name: JaJaDi Kerktijden.nl
 	Plugin URI: http://tech.janjaapvandijk.nl/jajadi-kerktijden
 	Description: Publish sermons from kerktijden.nl
-	Version: 1.1
+	Version: 1.2
 	Author: Janjaap van Dijk
 	Author URI: http://tech.janjaapvandijk.nl
 	License: GPL2

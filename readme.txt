@@ -4,7 +4,7 @@ Donate link: http://janjaapvandijk.com/
 Tags: kerktijden, Nederlands, kerk, kerken, church, dutch
 Requires at least: 3.0.1
 Tested up to: 3.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,13 +45,19 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 
 == Changelog ==
 
-= 1.0 =
+= 1.2 =
+* Fix Shortcode, when using shortcode, code placed at top of page/post.
+
+= 1.1 =
 * Fix some little issues.
 
 = 1.0 =
 * First relaese.
 
 == Upgrade Notice ==
+
+= 1.2 =
+This version fixes shortcode place on page/post.
 
 = 1.1 =
 This version fixes some little issues.

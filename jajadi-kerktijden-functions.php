@@ -10,18 +10,20 @@ function jajadi_kerktijden_load_textdomain() {
 /*	returns the content of $GLOBALS['post']														*/
 /************************************************************************************************/
 function jajadi_kerktijden_shortcode(){
-	$kerktijdensite = 'http://www.kerktijden.nl/?zoek=toonkerktijden&kerkid=' . get_option( 'jajadikerkid' );
-	$ch = curl_init ($kerktijdensite);
+	$return				= '';
+	$kerktijdensite		= 'http://www.kerktijden.nl/?zoek=toonkerktijden&kerkid=' . get_option( 'jajadikerkid' );
+	$ch					= curl_init ($kerktijdensite);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$page = curl_exec($ch);
+	$page				= curl_exec($ch);
 
 	preg_match('#<table id="zoekresultaten"[^>]*>(.+?)</table>#is', $page, $matches);
 	foreach ($matches as &$match) {
 		$match = $match;
 	}
-	echo '<table class="jajadikerktijden">';
-		echo $matches[1];
-	echo '</table><br /><small>' . __('Source:', 'jajadi-kerktijden') . ' <a href="http://www.kerktijden.nl/">kerktijden.nl</a></small>';
+	$return	.= '<table class="jajadikerktijden">';
+	$return	.= $matches[1];
+	$return	.= '</table><br /><small>' . __('Source:', 'jajadi-kerktijden') . ' <a href="http://www.kerktijden.nl/">kerktijden.nl</a></small>';
+	return $return;
 }
 add_shortcode('kerktijden', 'jajadi_kerktijden_shortcode');
 
