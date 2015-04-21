@@ -4,7 +4,7 @@ Donate link: http://janjaapvandijk.com/
 Tags: kerktijden, Nederlands, kerk, kerken, church, dutch
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,7 @@ Publish sermons from kerktijden.nl
 == Description ==
 
 Publish sermons from [kerktijden.nl](http://www.kerktijden.nl/). 
+[kerktijden.nl](http://www.kerktijden.nl/) will make their own plugin. Until then this plugin will help you to show the sermons.
 
 == Installation ==
 
@@ -45,6 +46,10 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 
 == Changelog ==
 
+= 1.3 =
+* Update the shortcode to show a limit number of services in a narrow list. Tanks to [henrivanwerkhoven](https://profiles.wordpress.org/henrivanwerkhoven).
+* Fix search on site Kertijden.nl for sermons. It only shows the current and next month.
+
 = 1.2 =
 * Fix Shortcode, when using shortcode, code placed at top of page/post.
 
@@ -55,6 +60,9 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 * First relaese.
 
 == Upgrade Notice ==
+
+= 1.3 =
+Fix the search on Kerktijden.nl. Update the shortcode to show a limit number of services in a narrow list.
 
 = 1.2 =
 This version fixes shortcode place on page/post.
