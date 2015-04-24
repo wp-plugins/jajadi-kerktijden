@@ -21,7 +21,7 @@ function jajadi_kerktijden_shortcode($atts){
 	), $atts);
 	// original code
 	$return				= '';
-	$kerktijdensite		= 'http://www.kerktijden.nl/gem/' . get_option( 'jajadikerkid' );
+	$kerktijdensite		= 'http://www.kerktijden.nl/gem/' . get_option( 'jajadikerktijdenkerkid' );
 	$ch					= curl_init ($kerktijdensite);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$page				= curl_exec($ch);
@@ -60,9 +60,144 @@ function jajadi_kerktijden_shortcode($atts){
 		$table .= '<small>' . __('Source:', 'jajadi-kerktijden') . ' <a href="http://www.kerktijden.nl/">kerktijden.nl</a></small></td></tr>';
 		return '<table style="border:none;">' . $table . '</table>';
 	}
-	$return	.= '<table class="jajadikerktijden">';
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+	$return	.= '<style>
+	.emgKerktijdenGatherings.grootKerkDetail {
+		margin-top: 20px;
+		list-style: none;
+		color: ' . get_option( 'jajadikerktijdendefaulttext' ) . ';
+	}
+	.emgKerktijdenGatherings.grootKerkDetail .gatherings {
+		background-color: ' . get_option( 'jajadikerktijdendefaulbackground' ) . ';
+		overflow: auto;
+		margin-top: 10px;
+	}*
+	.emgKerktijdenGatherings.grootKerkDetail .gathering.cancelled, .emgKerktijdenGatherings.grootKerkDetail .gathering.cancelled .type.regular {
+		font-style: italic;
+		color: ' . get_option( 'jajadikerktijdencancelledregular' ) . ';
+	}
+	.emgKerktijdenGatherings.grootKerkDetail .gathering.cancelled .type {
+		color: ' . get_option( 'jajadikerktijdencancelledtype' ) . ';
+	}
+	.emgKerktijdenGatherings.grootKerkDetail .gathering .type.regular {
+		color: ' . get_option( 'jajadikerktijdensermontyperegular' ) . ';
+	}
+	.emgKerktijdenGatherings.grootKerkDetail .gatherings a {
+		color:' . get_option( 'jajadikerktijdenlink' ) . ';
+	}
+	.emgKerktijdenGatherings.grootKerkDetail .gatherings a:hover {
+		color: ' . get_option( 'jajadikerktijdenlinkhover' ) . ';
+		text-decoration: none;
+	}
+		.emgKerktijdenGatherings.grootKerkDetail .month {
+			padding: 22px 0px 15px 0px;
+			border-top: solid 1px #b7c5e1;
+			display: none;
+		}
+		.emgKerktijdenGatherings.grootKerkDetail .month.initialResult {
+			display: block;
+		}
+		.emgKerktijdenGatherings.grootKerkDetail .month h3 {
+			margin-left: 10px;
+		}
+		.emgKerktijdenGatherings.grootKerkDetail .month:FIRST-CHILD {
+			border-top: none;
+		}
+		.emgKerktijdenGatherings.grootKerkDetail .month .day {
+			display: block;
+			clear: both;
+			overflow: auto;
+			margin-top: 9px;
+			padding: 9px 10px 0px 10px;
+			border-top: dotted thin #f5f5f5;
+		}
+			.emgKerktijdenGatherings.grootKerkDetail .month .dayText {
+				font-weight: bold;
+				color: ' . get_option( 'jajadikerktijdendate' ) . ';
+				clear: both;
+				line-height: 22px;
+			}
+			.emgKerktijdenGatherings.grootKerkDetail .month .gathering {
+				clear: both;
+				display: block;
+				padding-bottom: 5px;
+				overflow: hidden;
+			}
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .info {
+					float: left;
+					width: 35%;
+					margin-right: 2%;
+					min-height: 18px;
+				}
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .info span {
+					display: block;
+				}
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .info .time {
+					font-weight: bold;
+				}
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .preacher {
+					float: left;
+					width: 30%;
+					margin-right: 2%;
+					display: block;
+					min-height: 18px;
+					line-height: 18px;
+				}
+					.emgKerktijdenGatherings.grootKerkDetail .gathering .preacher span {
+						/*display: list-item;*/
+						width: 100%;
+					}
+					.emgKerktijdenGatherings.grootKerkDetail .gathering .info .location {
+						font-size: 10px;
+						color: ' . get_option( 'jajadikerktijdenlocation' ) . ';
+						line-height: 16px;
+					}
+					.emgKerktijdenGatherings.grootKerkDetail .gathering .info .deviatingLocation {	
+						color: ' . get_option( 'jajadikerktijdenlocationdeviating' ) . ';
+					}
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .gatheringTypes {
+					float: left;
+					width: 20%;
+					border: dotten thin red;
+					display: block;
+					min-height: 18px;
+					line-height: 18px;
+				}
+				
+				.emgKerktijdenGatherings.grootKerkDetail .gathering .type {	
+					min-height: 18px;
+					color: ' . get_option( 'jajadikerktijdensermontype' ) . ';
+					display: block;
+				}
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past,
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past a,
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past .gathering .type,
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past .gathering .location,
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past .gathering .preacher {
+			color: ' . get_option( 'jajadikerktijdenpasttext' ) . ';
+		}
+		.emgKerktijdenGatherings.grootKerkDetail .month .day.past .dayText {
+			color: ' . get_option( 'jajadikerktijdenpastdaytext' ) . ';
+		}
+				
+				
+				
+				</style>
+				<div class="emgKerktijdenGatherings grootKerkDetail">';
 	$return	.= $matches[1];
-	$return	.= '</table><br /><small>' . __('Source:', 'jajadi-kerktijden') . ' <a href="http://www.kerktijden.nl/gem/' . get_option( 'jajadikerkid' ) . '">kerktijden.nl</a></small>';
+	$return	.= '</div><br /><small>' . __('Source:', 'jajadi-kerktijden') . ' <a href="http://www.kerktijden.nl/gem/' . get_option( 'jajadikerktijdenkerkid' ) . '">kerktijden.nl</a></small>';
 	return $return;
 }
 add_shortcode('kerktijden', 'jajadi_kerktijden_shortcode');
@@ -93,6 +228,23 @@ function jajadi_kerktijden_add_help_text( $contextual_help, $screen_id, $screen 
 	return $contextual_help;
 }
 
+
+/************************************************************************************************/
+/*	Add colorpicker															*/
+/************************************************************************************************/
+
+add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
+function wptuts_add_color_picker( $hook ) {
+ 
+    if( is_admin() ) { 
+     
+        // Add the color picker css file       
+        wp_enqueue_style( 'wp-color-picker' ); 
+         
+        // Include our custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_script( 'custom-script-handle', plugins_url( 'custom-script.js', __FILE__ ), array( 'wp-color-picker' ), false, true ); 
+    }
+}
 
 
 ?>

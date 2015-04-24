@@ -3,8 +3,8 @@ Contributors: DoubelJ
 Donate link: http://janjaapvandijk.com/
 Tags: kerktijden, Nederlands, kerk, kerken, church, dutch
 Requires at least: 3.0.1
-Tested up to: 4.0
-Stable tag: 1.3
+Tested up to: 4.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 
 == Changelog ==
 
+= 1.4 =
+* Add styling options
+
 = 1.3 =
 * Update the shortcode to show a limit number of services in a narrow list. Tanks to [henrivanwerkhoven](https://profiles.wordpress.org/henrivanwerkhoven).
 * Fix search on site Kertijden.nl for sermons. It only shows the current and next month.
@@ -60,6 +63,9 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 * First relaese.
 
 == Upgrade Notice ==
+
+= 1.4 =
+* Add styling options
 
 = 1.3 =
 Fix the search on Kerktijden.nl. Update the shortcode to show a limit number of services in a narrow list.
