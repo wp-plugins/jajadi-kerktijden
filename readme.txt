@@ -46,7 +46,7 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 
 == Changelog ==
 
-= 1.4 =
+= 2.0 =
 * Add styling options
 
 = 1.3 =
@@ -64,7 +64,7 @@ You can find answers to your questions, suggest a feed, or just drop us a line a
 
 == Upgrade Notice ==
 
-= 1.4 =
+= 2.0 =
 * Add styling options
 
 = 1.3 =
