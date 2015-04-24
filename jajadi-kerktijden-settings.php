@@ -99,8 +99,8 @@ function jajadi_kerktijden_settings_page() {
 			<input type="hidden" name="jajadikerktijdenlocation" value="<?php echo get_option( 'jajadikerktijdenlocation' ); ?>" />
 			<input type="hidden" name="jajadikerktijdenlocationdeviating" value="<?php echo get_option( 'jajadikerktijdenlocationdeviating' ); ?>" />
 			<input type="hidden" name="jajadikerktijdensermontype" value="<?php echo get_option( 'jajadikerktijdensermontype' ); ?>" />
-			<input type="hidden" name="jajadikerktijdenpasttext" value="<?php echo get_option( 'jajadikerktijdenpasttext' ); ?>" />
-			<input type="hidden" name="jajadikerktijdenpastdaytext" value="<?php echo get_option( 'jajadikerktijdenpastdaytext' ); ?>" />
+			<input type="hidden" name="jajadikerktijdenpasttext" value="<?php echo get_option( 'jajadikerktijdenpasttext', '#a4a4a4' ); ?>" />
+			<input type="hidden" name="jajadikerktijdenpastdaytext" value="<?php echo get_option( 'jajadikerktijdenpastdaytext', '#7a7a7a' ); ?>" />
 
 		<?php
 					submit_button(); 
